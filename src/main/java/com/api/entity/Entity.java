@@ -2,10 +2,29 @@ package com.api.entity;
 
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class Entity     {
         private int id;
-        private String title;
+
+    @Override
+    public String toString() {
+        return "Entity{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", price=" + price +
+                ", discountPercentage=" + discountPercentage +
+                ", rating=" + rating +
+                ", stock=" + stock +
+                ", brand='" + brand + '\'' +
+                ", category='" + category + '\'' +
+                ", thumbnail='" + thumbnail + '\'' +
+                '}';
+    }
+
+    private String title;
     private String description;
 
     public int getId() {
@@ -95,5 +114,15 @@ public class Entity     {
     private String brand;
     private String category;
     private String thumbnail;
+
+    public List<String> getImages() {
+        return images;
+    }
+
+    public void setImages(List<String> images) {
+        this.images = images;
+    }
+
+    private List<String> images;
 
 }
