@@ -6,26 +6,16 @@ import java.util.List;
 
 @Component
 public class Entity     {
-        private int id;
-
-    @Override
-    public String toString() {
-        return "Entity{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", price=" + price +
-                ", discountPercentage=" + discountPercentage +
-                ", rating=" + rating +
-                ", stock=" + stock +
-                ", brand='" + brand + '\'' +
-                ", category='" + category + '\'' +
-                ", thumbnail='" + thumbnail + '\'' +
-                '}';
-    }
-
+    private int id;
     private String title;
     private String description;
+    private int price;
+    private float discountPercentage;
+    private int rating;
+    private int stock;
+    private String brand;
+    private String category;
+    private String thumbnail;
 
     public int getId() {
         return id;
@@ -107,13 +97,7 @@ public class Entity     {
         this.thumbnail = thumbnail;
     }
 
-    private int price;
-    private float discountPercentage;
-    private int rating;
-    private int stock;
-    private String brand;
-    private String category;
-    private String thumbnail;
+
 
     public List<String> getImages() {
         return images;
@@ -124,5 +108,22 @@ public class Entity     {
     }
 
     private List<String> images;
+
+    @Override
+    public String toString() {
+        return "Entity{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", price=" + price +
+                ", discountPercentage=" + discountPercentage +
+                ", rating=" + rating +
+                ", stock=" + stock +
+                ", brand='" + brand + '\'' +
+                ", category='" + category + '\'' +
+                ", thumbnail='" + thumbnail + '\'' +
+                '}';
+    }
+
 
 }

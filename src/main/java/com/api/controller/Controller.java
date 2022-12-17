@@ -21,7 +21,7 @@ public class Controller {
 
     @GetMapping("/get")
     public String  getAllEmployees() {
-        String res= service.getAllEmployees();
+        String res= service.getData();
         return res;
     }
     @GetMapping("/get_dat_api")
