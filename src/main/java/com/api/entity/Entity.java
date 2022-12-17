@@ -6,6 +6,7 @@ import java.util.List;
 
 @Component
 public class Entity     {
+    // Entity has been crated in order to convert JSON format data into Object format
     private int id;
     private String title;
     private String description;

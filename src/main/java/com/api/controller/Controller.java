@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 
-
 @RestController
 public class Controller {
     @Autowired
@@ -19,28 +18,21 @@ public class Controller {
     @Autowired
     private Entity entity;
 
-    @GetMapping("/get")
-    public String  getAllEmployees() {
-        String res= service.getData();
-        return res;
-    }
-    @GetMapping("/get_dat_api")
-    private Entity  getAllE() throws JsonProcessingException {
+    @GetMapping("/get_data_api")
+    private Entity getData1() throws JsonProcessingException {
+        //this function will give response in Object format
         String uri = "https://dummyjson.com/products/2";
-        RestTemplate restTemplate= new RestTemplate();
-        String result = restTemplate.getForObject(uri,String.class);
-        System.out.println("Below is the response in JSON format");
-        System.out.println(result);
-        ObjectMapper objectMapper = new ObjectMapper();
-       Entity e = objectMapper.readValue(result, Entity.class);
-       System.out.println("Below is the response in Object format");
-
-
-        System.out.println(e);
-
-        return e;
+        Entity result = service.getData(uri);
+        return result;
     }
 
+    @GetMapping("/fetchData")
+    private String trial() {
+        //this is created for trial purpose and this function will give data in JSON format
+        String data = service.fetchData("https://dummyjson.com/products/4");
+
+        return data;
+    }
 
 
 }
