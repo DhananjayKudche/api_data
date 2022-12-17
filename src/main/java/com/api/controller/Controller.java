@@ -5,6 +5,8 @@ import com.api.service.Service;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,11 +21,11 @@ public class Controller {
     private Entity entity;
 
     @GetMapping("/get_data_api")
-    private Entity getData1() throws JsonProcessingException {
+    private ResponseEntity<Entity> getData1() throws JsonProcessingException {
         //this function will give response in Object format
         String uri = "https://dummyjson.com/products/2";
         Entity result = service.getData(uri);
-        return result;
+        return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
     @GetMapping("/fetchData")
