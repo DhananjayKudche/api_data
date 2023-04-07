@@ -35,6 +35,13 @@ public class Controller {
 
         return data;
     }
+    @GetMapping("/fetchData")
+    private String trial2() {
+        //this is created for trial purpose and this function will give data in JSON format
+        String data = service.fetchData("https://dummyjson.com/products/4");
+
+        return data;
+    }
 
 
 }
